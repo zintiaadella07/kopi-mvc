@@ -1,0 +1,67 @@
+/* ===== Reset CSS & Box Model ===== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+/* ===== Palet kopi ===== */
+:root {
+  --espresso: #2f1d12;
+  --kopi: #8a4b21;
+  --kopi-gelap: #6b3817;
+  --krim: #faf5ef;
+  --susu: #ffffff;
+  --garis: #e6d9ca;
+  --teks: #2b1d14;
+  --teks-lembut: #6a5646;
+}
+
+/* ===== Dasar ===== */
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--krim);
+  color: var(--teks);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; padding-top: 2rem; padding-bottom: 2rem; }
+.container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 1rem; }
+
+/* ===== Header & Footer ===== */
+.site-header { background: var(--espresso); color: #fff; padding: 1rem 0; }
+.site-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.brand { color: #f3d9b8; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
+.site-header nav a { color: #eadbc8; margin-left: 1rem; text-decoration: none; }
+.site-header nav a:hover, .site-header nav a:focus { color: #fff; text-decoration: underline; }
+.site-footer { background: var(--garis); color: var(--teks-lembut); padding: 1rem 0; font-size: 0.875rem; }
+
+/* ===== Komponen ===== */
+.card { background: var(--susu); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--garis); box-shadow: 0 4px 6px -1px rgb(47 29 18 / 0.1); }
+.card h1, .card h2 { margin-bottom: 1rem; color: var(--espresso); }
+.card p { margin-bottom: 1rem; }
+.hero { border-left: 6px solid var(--kopi); }
+
+.btn { display: inline-block; background: var(--kopi); color: #fff; padding: 0.5rem 1rem; border: 0; border-radius: 6px; font: inherit; text-decoration: none; cursor: pointer; }
+.btn:hover, .btn:focus { background: var(--kopi-gelap); }
+
+.badge { display: inline-block; background: #f3e4d2; color: var(--kopi-gelap); padding: 0.1rem 0.6rem; border-radius: 999px; font-size: 0.8rem; }
+
+.menu-list { list-style: none; }
+.menu-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--garis); }
+.menu-list li:last-child { border-bottom: 0; }
+.menu-list p { margin: 0.25rem 0 0; color: var(--teks-lembut); }
+
+table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+th, td { padding: 0.6rem 0.75rem; text-align: left; border-bottom: 1px solid var(--garis); vertical-align: top; }
+th { background: #f7efe5; }
+
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.field input, .field select { width: 100%; padding: 0.5rem; border: 1px solid #b9a592; border-radius: 6px; font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+
+@media (max-width: 600px) {
+  .site-header nav a { margin: 0 0.75rem 0 0; }
+  table { font-size: 0.9rem; }
+}

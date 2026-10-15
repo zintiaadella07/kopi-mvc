@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<section class="card hero">
+  <h1>Halo, <%= userName %>!</h1>
+  <p>Selamat datang di Kedai Kopi Senja. Saat ini ada <strong><%= totalMenu %></strong> menu yang siap diseduh untukmu.</p>
+  <p><a class="btn" href="/katalog">Lihat Semua Menu</a></p>
+</section>
+
+<section class="card" style="margin-top: 1.5rem;">
+  <h2>Rekomendasi Barista</h2>
+  <ul class="menu-list">
+    <% rekomendasi.forEach(item => { %>
+      <li>
+        <strong><%= item.nama %></strong>
+        <span class="badge"><%= item.jenis %></span>
+        <p><%= item.deskripsi %></p>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
